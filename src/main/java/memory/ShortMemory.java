@@ -1,5 +1,8 @@
 package memory;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ShortMemory {
 
     private int questionPositionFromConnection;
@@ -7,6 +10,8 @@ public class ShortMemory {
     private int answerPositionFromAnswers = -1;
 
     private int previousDistanceBetweenStrings = 0;
+
+    private Map<Integer, Integer> connection = new HashMap<>();
 
     private String response;
 
@@ -50,5 +55,13 @@ public class ShortMemory {
 
     public void setPreviousDistanceBetweenStrings(int previousDistanceBetweenStrings) {
         this.previousDistanceBetweenStrings = previousDistanceBetweenStrings;
+    }
+
+    public Map<Integer, Integer> getConnection() {
+        return connection;
+    }
+
+    public void setConnection(Map<Integer, Integer> connection) {
+        this.connection = connection;
     }
 }

@@ -24,11 +24,7 @@ public class ConnectionsMemoryScanner extends MemoryScanner {
             String[] connections = line.split(",");
             for (String con : connections) {
                 String[] connect = con.split(":");
-                String posAnswerInConnection = connect[1];
-                if (Integer.parseInt(posAnswerInConnection) == getShortMemory().getAnswerPositionFromAnswers()) {
-                    getShortMemory().setQuestionPositionFromConnection(Integer.parseInt(connect[0]));
-                    getShortMemory().setHasQuestion(true);
-                }
+                getShortMemory().getConnection().put(Integer.parseInt(connect[0]), Integer.parseInt(connect[1]));
             }
         }
     }

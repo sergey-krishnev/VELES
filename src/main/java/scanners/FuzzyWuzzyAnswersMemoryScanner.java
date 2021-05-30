@@ -27,13 +27,15 @@ public class FuzzyWuzzyAnswersMemoryScanner extends MemoryScanner {
 
     @Override
     protected boolean checkNecessary(int position, String line) {
-        int distance = FuzzySearch.weightedRatio(getShortMemory().getResponse(), line);
-        CommonUtils.log("Distance benween '" + getShortMemory().getResponse()
-                +"' and '" + line + "'" + distance);
-        if (getShortMemory().getPreviousDistanceBetweenStrings() < distance) {
-            CommonUtils.log("Maybe answer with this position " + position + " is better");
-            getShortMemory().setPreviousDistanceBetweenStrings(distance);
-            return true;
+        if (getShortMemory().getConnection().containsValue(position)) {
+            int distance = FuzzySearch.weightedRatio(getShortMemory().getResponse(), line);
+            CommonUtils.log("Distance benween '" + getShortMemory().getResponse()
+                    + "' and '" + line + "' " + distance);
+            if (getShortMemory().getPreviousDistanceBetweenStrings() < distance && distance >= 50) {
+                CommonUtils.log("Maybe answer with this position " + position + " is better");
+                getShortMemory().setPreviousDistanceBetweenStrings(distance);
+                return true;
+            }
         }
         return false;
     }
