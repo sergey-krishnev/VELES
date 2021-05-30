@@ -2,10 +2,7 @@ package factories;
 
 import memory.MemoryType;
 import memory.ShortMemory;
-import scanners.AnswersMemoryScanner;
-import scanners.ConnectionsMemoryScanner;
-import scanners.MemoryScanner;
-import scanners.QuestionsMemoryScanner;
+import scanners.*;
 
 public class MemoryScannerFactory {
 
@@ -27,6 +24,9 @@ public class MemoryScannerFactory {
                 break;
             case ANSWERS:
                 memoryScanner = new AnswersMemoryScanner(shortMemory);
+                break;
+            case FUZZY_WUZZY_ANSWERS:
+                memoryScanner = new FuzzyWuzzyMemoryScanner(shortMemory);
                 break;
         }
 

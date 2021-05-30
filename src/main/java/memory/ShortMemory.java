@@ -6,6 +6,8 @@ public class ShortMemory {
 
     private int answerPositionFromAnswers = -1;
 
+    private int previousDistanceBetweenStrings = 0;
+
     private String response;
 
     private boolean hasQuestion = true;
@@ -42,4 +44,11 @@ public class ShortMemory {
         this.questionPositionFromConnection = questionPositionFromConnection;
     }
 
+    public int getPreviousDistanceBetweenStrings() {
+        return previousDistanceBetweenStrings;
+    }
+
+    public void setPreviousDistanceBetweenStrings(int previousDistanceBetweenStrings) {
+        this.previousDistanceBetweenStrings = previousDistanceBetweenStrings;
+    }
 }

@@ -16,7 +16,7 @@ public class Dialog {
             ShortMemory shortMemory = new ShortMemory();
             MemoryScannerFactory factory = new MemoryScannerFactory(shortMemory);
             MemoryScanner questions = factory.createMemoryScanner(MemoryType.QUESTIONS);
-            MemoryScanner answers = factory.createMemoryScanner(MemoryType.ANSWERS);
+            MemoryScanner answers = factory.createMemoryScanner(MemoryType.FUZZY_WUZZY_ANSWERS);
             MemoryScanner connections = factory.createMemoryScanner(MemoryType.CONNECTIONS);
             shortMemory.setQuestionPositionFromConnection(0);
             while (shortMemory.isHasQuestion()) {
@@ -24,6 +24,7 @@ public class Dialog {
                 questions.scan();
                 shortMemory.setResponse(console.readLine());
                 answers.scan();
+                shortMemory.setPreviousDistanceBetweenStrings(0);
                 connections.scan();
             }
             CommonUtils.say("Даже не знаю, что на это ответить");
