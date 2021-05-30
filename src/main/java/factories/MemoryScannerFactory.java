@@ -26,7 +26,7 @@ public class MemoryScannerFactory {
                 memoryScanner = new AnswersMemoryScanner(shortMemory);
                 break;
             case FUZZY_WUZZY_ANSWERS:
-                memoryScanner = new FuzzyWuzzyMemoryScanner(shortMemory);
+                memoryScanner = new FuzzyWuzzyAnswersMemoryScanner(shortMemory);
                 break;
         }
 

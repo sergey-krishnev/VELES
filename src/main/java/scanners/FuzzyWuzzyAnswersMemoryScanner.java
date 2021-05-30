@@ -9,9 +9,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class FuzzyWuzzyMemoryScanner extends MemoryScanner {
+public class FuzzyWuzzyAnswersMemoryScanner extends MemoryScanner {
 
-    public FuzzyWuzzyMemoryScanner(ShortMemory shortMemory) {
+    public FuzzyWuzzyAnswersMemoryScanner(ShortMemory shortMemory) {
         super(shortMemory);
     }
 

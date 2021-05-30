@@ -2,7 +2,7 @@ package common;
 
 public class CommonUtils {
 
-    public static boolean isEnabled = false;
+    public static boolean isEnabled = true;
 
     public static void say(String phrase) {
         System.out.println("/////////VELES///////// " + phrase);
